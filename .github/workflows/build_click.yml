@@ -9,31 +9,48 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: 🌊 Get the source code of this repositorie...
+      - name: Get the source code of this repositorie...
         uses: actions/checkout@v3
 
-      - name: 🌊 Get variable configuration...
+      - name: Get variable configuration...
         run: |
-          echo "BUILD_TIME=$(TZ=Asia/Shanghai date +%s | md5sum | awk '{print substr($1,1,10)}')" >> $GITHUB_ENV
+          echo "BUILD_TIME=$(TZ=Africa/Cairo date +%s | md5sum | awk '{print substr($1,1,10)}')" >> $GITHUB_ENV
 
-      - name: 🌊 Configuration Environment‌‌...
+      - name: Configuration Environment‌‌...
         run: |
           cd $GITHUB_WORKSPACE
           sudo bash env.sh
 
-      - name: 🌊 Start building...
+      - name: Start KSU building...
         run: |
           cd $GITHUB_WORKSPACE
-          sudo bash build.sh
+          sudo bash kernelsu.sh
           sudo chmod -R 0777 ./*
           echo "RELEASE_NAME=$(cat "$GITHUB_WORKSPACE/out/RELEASETITLE.txt")" >> $GITHUB_ENV
           echo "${{ env.RELEASE_NAME }}"
-          
-      - name: 🌊 Upload to Release‌‌...
-        uses: ncipollo/release-action@main
+
+      - name: Start normal building...
+        run: |
+          cd $GITHUB_WORKSPACE
+          sudo bash normal.sh
+          sudo chmod -R 0777 ./*
+
+      - name: Upload to telegram‌‌....
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message_file: "${{ github.workspace }}/out/telegram_message.txt"
+          document: "${{ github.workspace }}/out/*.zip"
+
+      - name: Upload to Release‌‌...
+        uses: ncipollo/release-action@v1
         with:
           artifacts: "${{ github.workspace }}/out/*"
           name: ${{ env.RELEASE_NAME }}
           tag: ${{ env.BUILD_TIME }}
+          allowUpdates: true
           bodyFile: "${{ github.workspace }}/out/RELEASE.md"
-          token: ${{ secrets.TOKEN_MOCHENYA }}
+          removeArtifacts: false
+          replacesArtifacts: false
+          token: ${{ secrets.GITHUB_TOKEN }}
