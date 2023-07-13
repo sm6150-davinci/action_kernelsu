@@ -35,14 +35,6 @@ jobs:
           sudo bash normal.sh
           sudo chmod -R 0777 ./*
 
-      - name: Upload to telegram‌‌....
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message_file: "${{ github.workspace }}/out/telegram_message.txt"
-          document: "${{ github.workspace }}/out/*.zip"
-
       - name: Upload to Release‌‌...
         uses: ncipollo/release-action@v1
         with:
