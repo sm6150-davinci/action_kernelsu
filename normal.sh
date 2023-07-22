@@ -7,13 +7,13 @@
 WORKDIR="$(pwd)"
 
 # ZyClang
-ZYCLANG_DLINK="https://github.com/ZyCromerZ/Clang/releases/download/17.0.0-20230710-release/Clang-17.0.0-20230710.tar.gz"
+ZYCLANG_DLINK="https://github.com/ZyCromerZ/Clang/releases/download/17.0.0-20230722-release/Clang-17.0.0-20230722.tar.gz"
 ZYCLANG_DIR="$WORKDIR/ZyClang/bin"
 
 # Kernel Source
 KERNEL_GIT="https://github.com/helliscloser/kernel_xiaomi_sm6150.git"
-KERNEL_BRANCHE="13"
-KERNEL_DIR="$WORKDIR/KenvyraKernel"
+KERNEL_BRANCHE="v"
+KERNEL_DIR="$WORKDIR/vantom"
 
 # Anykernel3
 ANYKERNEL3_GIT="https://github.com/AMWolfstein/AnyKernel3.git"
@@ -27,7 +27,7 @@ IMAGE="$KERNEL_DIR/out/arch/arm64/boot/Image.gz"
 DTB="$KERNEL_DIR/out/arch/arm64/boot/dtb.img"
 DTBO="$KERNEL_DIR/out/arch/arm64/boot/dtbo.img"
 
-export KBUILD_BUILD_USER=AMWolfstein
+export KBUILD_BUILD_USER=Rumais
 export KBUILD_BUILD_HOST=GitHubCI
 
 msg() {
