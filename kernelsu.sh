@@ -11,8 +11,8 @@ ZYCLANG_DLINK="https://github.com/ZyCromerZ/Clang/releases/download/18.0.0-20230
 ZYCLANG_DIR="$WORKDIR/ZyClang/bin"
 
 # Kernel Source
-KERNEL_GIT="https://github.com/AMWolfstein/android_kernel_xiaomi_sm6150.git"
-KERNEL_BRANCHE="13-new"
+KERNEL_GIT="https://github.com/xiaomi-davinci/kernel_xiaomi_sm6150.git"
+KERNEL_BRANCHE="13"
 KERNEL_DIR="$WORKDIR/PerfDynamicKernel"
 
 # Anykernel3
