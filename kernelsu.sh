@@ -7,7 +7,7 @@
 WORKDIR="$(pwd)"
 
 # ZyClang
-ZYCLANG_DLINK="https://github.com/ZyCromerZ/Clang/releases/download/17.0.0-20230710-release/Clang-17.0.0-20230710.tar.gz"
+ZYCLANG_DLINK="https://github.com/ZyCromerZ/Clang/releases/download/18.0.0-20230813-release/Clang-18.0.0-20230813.tar.gz"
 ZYCLANG_DIR="$WORKDIR/ZyClang/bin"
 
 # Kernel Source
@@ -139,8 +139,8 @@ echo "
 2. **Device Code** : $DEVICES_CODE
 3. **LINUX Version** : $KERNEL_VERSION
 4. **KERNELSU Version**: $KERNELSU_VERSION
-5. **CLANG Version**: ZyC clang version 17.0.0
-6. **LLD Version**: LLD 17.0.0
+5. **CLANG Version**: ZyC clang version 18.0.0
+6. **LLD Version**: LLD 18.0.0
 " > telegram_message.txt
 echo "PerfDynamicKernel-$KERNEL_VERSION" > RELEASETITLE.txt
 cat RELEASE.md
