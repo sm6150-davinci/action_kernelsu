@@ -12,11 +12,11 @@ ZYCLANG_DIR="$WORKDIR/ZyClang/bin"
 
 # Kernel Source
 KERNEL_GIT="https://github.com/helliscloser/kernel_xiaomi_sm6150.git"
-KERNEL_BRANCHE="321x"
+KERNEL_BRANCHE="test"
 KERNEL_DIR="$WORKDIR/vantom"
 
 # Anykernel3
-ANYKERNEL3_GIT="https://github.com/AMWolfstein/AnyKernel3.git"
+ANYKERNEL3_GIT="https://github.com/sm6150-davinci/AnyKernel3.git"
 ANYKERNEL3_BRANCHE="master"
 
 # Build
