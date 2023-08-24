@@ -21,7 +21,7 @@ ANYKERNEL3_BRANCHE="master"
 
 # Build
 DEVICES_CODE="davinci"
-DEVICE_DEFCONFIG="davinci_defconfig"
+DEVICE_DEFCONFIG="vendor/sdmsteppe-perf_defconfig vendor/davinci.config"
 DEVICE_DEFCONFIG_FILE="$KERNEL_DIR/arch/arm64/configs/$DEVICE_DEFCONFIG"
 IMAGE="$KERNEL_DIR/out/arch/arm64/boot/Image.gz"
 DTB="$KERNEL_DIR/out/arch/arm64/boot/dtb.img"
