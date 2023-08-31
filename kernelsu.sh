@@ -7,11 +7,11 @@
 WORKDIR="$(pwd)"
 
 # ZyClang
-ZYCLANG_DLINK="https://github.com/ZyCromerZ/Clang/releases/download/18.0.0-20230809-release/Clang-18.0.0-20230809.tar.gz"
+ZYCLANG_DLINK="https://github.com/ZyCromerZ/Clang/releases/download/18.0.0-20230831-release/Clang-18.0.0-20230831.tar.gz"
 ZYCLANG_DIR="$WORKDIR/ZyClang/bin"
 
 # Kernel Source
-KERNEL_GIT="https://github.com/helliscloser/kernel_xiaomi_sm6150.git"
+KERNEL_GIT="https://github.com/vantoman/kernel_xiaomi_sm6150.git"
 KERNEL_BRANCHE="13"
 KERNEL_DIR="$WORKDIR/vantom"
 
@@ -118,14 +118,14 @@ cp $DTBO .
 # PACK FILE
 time=$(TZ='Africa/Cairo' date +"%Y-%m-%d %H:%M:%S")
 cairo_time=$(TZ='Africa/Cairo' date +%Y%m%d%H)
-ZIP_NAME="Vantom@hopethislasts-$KERNEL_VERSION-KernelSU-$KERNELSU_VERSION.zip"
+ZIP_NAME="VantomDynamic-$KERNEL_VERSION-KernelSU-$KERNELSU_VERSION.zip"
 find ./ * -exec touch -m -d "$time" {} \;
 zip -r9 $ZIP_NAME *
 mkdir -p $WORKDIR/out && cp *.zip $WORKDIR/out
 
 cd $WORKDIR/out
 echo "
-### Kenvyra KERNEL With/Without KERNELSU
+### VantomDynamic KERNEL With/Without KERNELSU
 1. **Time** : $(TZ='Africa/Cairo' date +"%Y-%m-%d %H:%M:%S") # Cario TIME
 2. **Device Code** : $DEVICES_CODE
 3. **LINUX Version** : $KERNEL_VERSION
@@ -134,7 +134,7 @@ echo "
 6. **LLD Version**: $LLD_VERSION
 " > RELEASE.md
 echo "
-### Kenvyra KERNEL With/Without KERNELSU
+### VantomDynamic KERNEL With/Without KERNELSU
 1. **Time** : $(TZ='Africa/Cairo' date +"%Y-%m-%d %H:%M:%S") # Cario TIME
 2. **Device Code** : $DEVICES_CODE
 3. **LINUX Version** : $KERNEL_VERSION
@@ -142,7 +142,7 @@ echo "
 5. **CLANG Version**: ZyC clang version 17.0.0
 6. **LLD Version**: LLD 17.0.0
 " > telegram_message.txt
-echo "KenvyraKernel-$KERNEL_VERSION" > RELEASETITLE.txt
+echo "VantomDynamicKernel-$KERNEL_VERSION" > RELEASETITLE.txt
 cat RELEASE.md
 cat telegram_message.txt
 cat RELEASETITLE.txt
