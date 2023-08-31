@@ -29,12 +29,6 @@ jobs:
           echo "RELEASE_NAME=$(cat "$GITHUB_WORKSPACE/out/RELEASETITLE.txt")" >> $GITHUB_ENV
           echo "${{ env.RELEASE_NAME }}"
 
-      - name: Start normal building...
-        run: |
-          cd $GITHUB_WORKSPACE
-          sudo bash normal.sh
-          sudo chmod -R 0777 ./*
-
       - name: Upload to Release‌‌...
         uses: ncipollo/release-action@v1
         with:
