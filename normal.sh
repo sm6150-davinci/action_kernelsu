@@ -7,7 +7,7 @@
 WORKDIR="$(pwd)"
 
 # ZyClang
-ZYCLANG_DLINK="https://github.com/ZyCromerZ/Clang/releases/download/18.0.0-20230823-release/Clang-18.0.0-20230823.tar.gz"
+ZYCLANG_DLINK="https://github.com/ZyCromerZ/Clang/releases/download/18.0.0-20230902-release/Clang-18.0.0-20230902.tar.gz"
 ZYCLANG_DIR="$WORKDIR/ZyClang/bin"
 
 # Kernel Source
@@ -16,7 +16,7 @@ KERNEL_BRANCHE="perf"
 KERNEL_DIR="$WORKDIR/PerfDynamicKernel"
 
 # Anykernel3
-ANYKERNEL3_GIT="https://github.com/AMWolfstein/AnyKernel3.git"
+ANYKERNEL3_GIT="https://github.com/xiaomi-davinci/AnyKernel3.git"
 ANYKERNEL3_BRANCHE="master"
 
 # Build
