@@ -16,7 +16,7 @@ KERNEL_BRANCHE="perf"
 KERNEL_DIR="$WORKDIR/Perf"
 
 # Anykernel3
-ANYKERNEL3_GIT="https://github.com/xiaomi-davinci/AnyKernel3.git"
+ANYKERNEL3_GIT="https://github.com/sm6150-davinci/AnyKernel3.git"
 ANYKERNEL3_BRANCHE="master"
 
 # Build
