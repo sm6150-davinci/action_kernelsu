@@ -12,7 +12,7 @@ ZYCLANG_DIR="$WORKDIR/ZyClang/bin"
 
 # Kernel Source
 KERNEL_GIT="https://github.com/sm6150-davinci/kernel_xiaomi_sm6150.git"
-KERNEL_BRANCHE="perf"
+KERNEL_BRANCHE="test"
 KERNEL_DIR="$WORKDIR/Perf"
 
 # Anykernel3
